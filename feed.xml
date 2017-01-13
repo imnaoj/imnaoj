@@ -5,104 +5,13 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>http://localhost/</link>
     <atom:link href="http://localhost/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 13 Jan 2017 20:49:16 +0100</pubDate>
-    <lastBuildDate>Fri, 13 Jan 2017 20:49:16 +0100</lastBuildDate>
+    <pubDate>Fri, 13 Jan 2017 20:56:31 +0100</pubDate>
+    <lastBuildDate>Fri, 13 Jan 2017 20:56:31 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
         <title>Mounting drive images</title>
-        <description>&lt;p&gt;Recently I read about how to &lt;a href=&quot;https://pen-testing.sans.org/blog/2016/12/07/mount-a-raspberry-pi-file-system-image&quot; target=&quot;_blank&quot;&gt;Mount a Raspberry Pi File System Image&lt;/a&gt;. The described procedure there can be applied to any drive image as long as it is not a virtual drive image (a &lt;strong&gt;dd&lt;/strong&gt; image from a SD card is used there). Luckily, many time ago I found the instructions for &lt;a href=&quot;#virtual-drive-image&quot;&gt;virtual drive images&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;real-drive-image&quot;&gt;Real drive image&lt;/h3&gt;
-&lt;p&gt;So you’ve got an image file of a given drive (not virtual).&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# ls -la cranbian-jessie.img &lt;/span&gt;
--rw-r--r-- &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; imnaoj imnaoj &lt;span class=&quot;m&quot;&gt;1389363200&lt;/span&gt; Dec  &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; 22:09 cranbian-jessie.img&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To find out the partitions of that drive image, &lt;em&gt;fdisk&lt;/em&gt; is so useful.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# fdisk -l cranbian-jessie.img &lt;/span&gt;
-Disk cranbian-jessie.img: 1.3 GiB, &lt;span class=&quot;m&quot;&gt;1389363200&lt;/span&gt; bytes, &lt;span class=&quot;m&quot;&gt;2713600&lt;/span&gt; sectors
-Units: sectors of &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; * &lt;span class=&quot;nv&quot;&gt;512&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;512&lt;/span&gt; bytes
-Sector size &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;logical/physical&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;512&lt;/span&gt; bytes / &lt;span class=&quot;m&quot;&gt;512&lt;/span&gt; bytes
-I/O size &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;minimum/optimal&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;512&lt;/span&gt; bytes / &lt;span class=&quot;m&quot;&gt;512&lt;/span&gt; bytes
-Disklabel &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;: dos
-Disk identifier: 0x5a7089a1
-
-Device               Boot  Start     End Sectors  Size Id Type
-cranbian-jessie.img1        &lt;span class=&quot;m&quot;&gt;8192&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;137215&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;129024&lt;/span&gt;   63M  c W95 FAT32 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;LBA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-cranbian-jessie.img2      &lt;span class=&quot;m&quot;&gt;137216&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2713599&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2576384&lt;/span&gt;  1.2G &lt;span class=&quot;m&quot;&gt;83&lt;/span&gt; Linux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To mount the Linux partition displayed above, the mount command requires an offset: at which byte starts the &lt;em&gt;cranbian-jessie.img2&lt;/em&gt; partition; as each sector is 512 bytes long, the offset is …&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# echo $((512*137216))&lt;/span&gt;
-70254592&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Finally, the partition is mounted with …&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# mount -v -o offset=70254592 -t ext4 cranbian-jessie.img /mnt&lt;/span&gt;
-mount: /dev/loop0 mounted on /mnt.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The filesystem of the partition contained in the drive image can be browsed as usual…&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# cat /mnt/etc/shadow | grep -F &amp;quot;$&amp;quot;&lt;/span&gt;
-cranpi:&lt;span class=&quot;nv&quot;&gt;$6$2AXLbEoG$zZlWSwrUSD02cm8&lt;/span&gt;...
-&lt;span class=&quot;c&quot;&gt;# umount /mnt&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;virtual-drive-image&quot;&gt;Virtual drive image&lt;/h3&gt;
-
-&lt;p&gt;The trick here works for fixed-size VDI files used in Virtual Box. The grep part looks for the OEM identifier string, which depends on the format applied to the partition.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;strong style=&quot;margin-right: 20px;&quot;&gt;Format&lt;/strong&gt;&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;strong style=&quot;margin-right: 200px;&quot;&gt;OEM ID (hex)&lt;/strong&gt;&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;strong&gt;OEM ID (plain)&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;FAT16&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EB 3C 90 4D 53 44 4F 53 35 2E 30&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;.&amp;lt;.MSDOS5.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;FAT32&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EB 58 90 4D 53 44 4F 53 35 2E 30&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;.X.MSDOS5.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;NTFS&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EB 52 90 4E 54 46 53&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;.R.NTFS&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;In the example below, a VDI file containing a single NTFS partition is used.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# grep -boa -m1 $&amp;#39;\xebR\x90NTFS&amp;#39; /home/imnaoj/vbvms/testing/testing.vdi | cut -d: -f1&lt;/span&gt;
-2129408
-&lt;span class=&quot;c&quot;&gt;# mount -o ro,loop,offset=2129408 /home/imnaoj/vbvms/testing/testing.vdi /mnt/&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# ls /mnt/&lt;/span&gt;
-Archivos de programa  c00d6f23f6c63035ef      IO.SYS	    pagefile.sys
-AUTOEXEC.BAT	      CONFIG.SYS	      MSDOS.SYS     RECYCLER
-...
-&lt;span class=&quot;c&quot;&gt;# umount /mnt&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This procedure is quite simple and does not require other tools than &lt;strong&gt;grep&lt;/strong&gt; and &lt;strong&gt;mount&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Another option is to use &lt;strong&gt;qemu&lt;/strong&gt; and the &lt;strong&gt;network block device&lt;/strong&gt; as stated in &lt;a href=&quot;https://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/&quot;&gt;Waugh’s post&lt;/a&gt; - I found it while searching for the above’s source …&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;modprobe nbd
-qemu-nbd -c /dev/nbd0 /home/imnaoj/vbvms/testing/testing.vdi
-mount /dev/nbd0p1 /mnt
-...
-umount /mnt
-qemu-nbd -d /dev/nbd0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Pretty straightforward, isn’t it? Ensure you’ve got both &lt;strong&gt;nbd&lt;/strong&gt;, &lt;strong&gt;nbd-client&lt;/strong&gt; and &lt;strong&gt;qemu&lt;/strong&gt; installed on the system you are running the above commands.&lt;/p&gt;
+        <description>Recently I read about how to Mount a Raspberry Pi File System Image. The described procedure there can be applied to any drive image as long as it is not a virtual drive image (a dd image from a SD card is used there). Luckily, many time ago I found the instructions for virtual drive images.
 
 </description>
         <pubDate>Fri, 13 Jan 2017 21:18:18 +0100</pubDate>
@@ -122,13 +31,7 @@ qemu-nbd -d /dev/nbd0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     
       <item>
         <title>Welcome to the gap!</title>
-        <description>&lt;p&gt;Hi there! It took a long time, but finally I realised the best way to start a project is to start a small task — check out &lt;a href=&quot;https://medium.com/the-mission/build-the-habit-first-d3dcfe0560c3&quot; target=&quot;_blank&quot;&gt;Kadavy’s post&lt;/a&gt; about starting small habits.&lt;/p&gt;
-
-&lt;p&gt;I will try to write a few lines about interesting things (to me) found while surfing and searching for how to get things done. The aim is that if someday in the future I face the same questions, I will likely remember I wrote about it.&lt;/p&gt;
-
-&lt;p&gt;You’re right. Instead of writing, I could print them, but you know papers get lost. I could bookmark them, but it would end with a huge bookmark list with reduced search capabilities (title and location).&lt;/p&gt;
-
-&lt;p&gt;Time will tell…&lt;/p&gt;
+        <description>Hi there! It took a long time, but finally I realised the best way to start a project is to start a small task — check out Kadavy’s post about starting small habits.
 
 </description>
         <pubDate>Fri, 13 Jan 2017 20:22:18 +0100</pubDate>
