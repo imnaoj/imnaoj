@@ -13,3 +13,8 @@ body {
 strong {
 	font-weight: 900;
 }
+
+.posts .post-excerpt {
+  display: block;
+  font-size: 14px;
+}

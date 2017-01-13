@@ -5,8 +5,8 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>http://localhost/</link>
     <atom:link href="http://localhost/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 13 Jan 2017 20:19:08 +0100</pubDate>
-    <lastBuildDate>Fri, 13 Jan 2017 20:19:08 +0100</lastBuildDate>
+    <pubDate>Fri, 13 Jan 2017 20:49:16 +0100</pubDate>
+    <lastBuildDate>Fri, 13 Jan 2017 20:49:16 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -135,8 +135,8 @@ qemu-nbd -d /dev/nbd0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         <link>http://localhost/2017/01/13/welcome-to-the-gap.html</link>
         <guid isPermaLink="true">http://localhost/2017/01/13/welcome-to-the-gap.html</guid>
         
-        
         <category>personal</category>
+        
         
       </item>
     
