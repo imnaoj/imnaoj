@@ -1,0 +1,15 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+.post-header h1, .site-footer li, .site-footer p, .site-title, .site-title:hover, .site-title:visited, .site-nav .page-link {
+    letter-spacing: 0px;
+}
+
+.post pre, .post code {
+	overflow: hidden;
+}
+
+strong {
+	font-weight: 900;
+}
