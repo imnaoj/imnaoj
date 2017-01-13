@@ -3,10 +3,10 @@
   <channel>
     <title>mind the gap</title>
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
-    <link>http://localhost/</link>
-    <atom:link href="http://localhost/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 13 Jan 2017 20:56:31 +0100</pubDate>
-    <lastBuildDate>Fri, 13 Jan 2017 20:56:31 +0100</lastBuildDate>
+    <link>https://imnaoj.github.io/</link>
+    <atom:link href="https://imnaoj.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 13 Jan 2017 20:59:42 +0100</pubDate>
+    <lastBuildDate>Fri, 13 Jan 2017 20:59:42 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -15,8 +15,8 @@
 
 </description>
         <pubDate>Fri, 13 Jan 2017 21:18:18 +0100</pubDate>
-        <link>http://localhost/2017/01/13/mounting-drives-images.html</link>
-        <guid isPermaLink="true">http://localhost/2017/01/13/mounting-drives-images.html</guid>
+        <link>https://imnaoj.github.io/2017/01/13/mounting-drives-images.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/01/13/mounting-drives-images.html</guid>
         
         <category>mount</category>
         
@@ -35,8 +35,8 @@
 
 </description>
         <pubDate>Fri, 13 Jan 2017 20:22:18 +0100</pubDate>
-        <link>http://localhost/2017/01/13/welcome-to-the-gap.html</link>
-        <guid isPermaLink="true">http://localhost/2017/01/13/welcome-to-the-gap.html</guid>
+        <link>https://imnaoj.github.io/2017/01/13/welcome-to-the-gap.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/01/13/welcome-to-the-gap.html</guid>
         
         <category>personal</category>
         
