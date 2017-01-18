@@ -5,9 +5,51 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>https://imnaoj.github.io/</link>
     <atom:link href="https://imnaoj.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 13 Jan 2017 21:12:52 +0100</pubDate>
-    <lastBuildDate>Fri, 13 Jan 2017 21:12:52 +0100</lastBuildDate>
+    <pubDate>Wed, 18 Jan 2017 23:06:35 +0100</pubDate>
+    <lastBuildDate>Wed, 18 Jan 2017 23:06:35 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Red Team Field Manual</title>
+        <description>Just found my copy yesterday. Quite handy.
+
+</description>
+        <pubDate>Thu, 19 Jan 2017 00:04:07 +0100</pubDate>
+        <link>https://imnaoj.github.io/2017/01/19/red-team-field-manual.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/01/19/red-team-field-manual.html</guid>
+        
+        
+        <category>read</category>
+        
+        <category>team</category>
+        
+        <category>cheatsheet</category>
+        
+        <category>hacking</category>
+        
+        <category>exploit</category>
+        
+        <category>fu</category>
+        
+      </item>
+    
+      <item>
+        <title>Password management</title>
+        <description>How to choose a good password. Each time I read something like that I remember a great comic stripe at xkcd.com.
+
+</description>
+        <pubDate>Wed, 18 Jan 2017 23:17:33 +0100</pubDate>
+        <link>https://imnaoj.github.io/2017/01/18/password-management.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/01/18/password-management.html</guid>
+        
+        
+        <category>password</category>
+        
+        <category>management</category>
+        
+        <category>personal</category>
+        
+      </item>
     
       <item>
         <title>Mounting drive images</title>
