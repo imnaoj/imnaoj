@@ -5,8 +5,8 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>https://imnaoj.github.io/</link>
     <atom:link href="https://imnaoj.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 18 Jan 2017 23:06:35 +0100</pubDate>
-    <lastBuildDate>Wed, 18 Jan 2017 23:06:35 +0100</lastBuildDate>
+    <pubDate>Wed, 18 Jan 2017 23:08:28 +0100</pubDate>
+    <lastBuildDate>Wed, 18 Jan 2017 23:08:28 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -17,7 +17,6 @@
         <pubDate>Thu, 19 Jan 2017 00:04:07 +0100</pubDate>
         <link>https://imnaoj.github.io/2017/01/19/red-team-field-manual.html</link>
         <guid isPermaLink="true">https://imnaoj.github.io/2017/01/19/red-team-field-manual.html</guid>
-        
         
         <category>read</category>
         
@@ -31,6 +30,7 @@
         
         <category>fu</category>
         
+        
       </item>
     
       <item>
@@ -42,12 +42,12 @@
         <link>https://imnaoj.github.io/2017/01/18/password-management.html</link>
         <guid isPermaLink="true">https://imnaoj.github.io/2017/01/18/password-management.html</guid>
         
-        
         <category>password</category>
         
         <category>management</category>
         
         <category>personal</category>
+        
         
       </item>
     
