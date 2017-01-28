@@ -5,9 +5,27 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>https://imnaoj.github.io/</link>
     <atom:link href="https://imnaoj.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 20 Jan 2017 19:05:25 +0100</pubDate>
-    <lastBuildDate>Fri, 20 Jan 2017 19:05:25 +0100</lastBuildDate>
+    <pubDate>Sat, 28 Jan 2017 12:17:34 +0100</pubDate>
+    <lastBuildDate>Sat, 28 Jan 2017 12:17:34 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Reset MySQL root password</title>
+        <description>For testing purposes I have a Linux virtual machine running MySQL, so whenever I check any given software requiring MySQL, I just start such VM. However, last time I run it, I forgot the MySQL root’s password - yes, I am human - so I was unable to create any new users.
+
+</description>
+        <pubDate>Sat, 28 Jan 2017 12:42:18 +0100</pubDate>
+        <link>https://imnaoj.github.io/2017/01/28/reset-mysql-root-password.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/01/28/reset-mysql-root-password.html</guid>
+        
+        <category>password</category>
+        
+        <category>root</category>
+        
+        <category>mysql</category>
+        
+        
+      </item>
     
       <item>
         <title>Red Team Field Manual</title>
