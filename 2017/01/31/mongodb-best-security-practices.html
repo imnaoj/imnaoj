@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>mind the gap</title>
+    <title>MongoDB best security practices</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!">
-    <link rel="canonical" href="https://imnaoj.github.io/">
+    <link rel="canonical" href="https://imnaoj.github.io/2017/01/31/mongodb-best-security-practices.html">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -58,40 +58,49 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Posts</h1>
+  <header class="post-header">
+    <h1>MongoDB best security practices</h1>
+    <p class="meta">Jan 31, 2017</p>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">Jan 31, 2017</span>
-        <a class="post-link" href="/2017/01/31/mongodb-best-security-practices.html">MongoDB best security practices</a>
-        <span class="post-excerpt">Today I have read about the detention of people related to the Phineas Fisher’s hacks. In such news article I found a link to his latest manifesto at pastebin.
+  <article class="post-content">
+  <p>Today I have read about the detention of people related to the Phineas Fisher’s hacks. In such news article I found a link to his latest manifesto at <a href="http://pastebin.com/raw/GPSHF04A">pastebin</a>.</p>
 
-</span>
-      </li>
-    
-      <li>
-        <span class="post-date">Jan 28, 2017</span>
-        <a class="post-link" href="/2017/01/28/reset-mysql-root-password.html">Reset MySQL root password</a>
-        <span class="post-excerpt">For testing purposes I have a Linux virtual machine running MySQL, so whenever I check any given software requiring MySQL, I just start such VM. However, last time I run it, I forgot the MySQL root’s password - yes, I am human - so I was unable to create any new users.
+<p>Such manifesto (in Spanish) explains how he (Phineas Fisher) hacked the <em>Hacking Team</em> company. One thing I really found interesting is that Hacking Team were running MongoDB instances out-of-the-box at the time they were hacked. For those unfamiliar with MongoDB, it comes with no authentication enabled, so if you do not configure it, anybody in the same network may connect to the database and run any query without need to provide username nor password.</p>
 
-</span>
-      </li>
-    
-      <li>
-        <span class="post-date">Jan 19, 2017</span>
-        <a class="post-link" href="/2017/01/19/red-team-field-manual.html">Red Team Field Manual</a>
-        <span class="post-excerpt">Just found my copy yesterday. Quite handy.
+<p>The steps to enable MongoDB authentication are pretty straight-forward: start the server, open a console and add an admin user.</p>
 
-</span>
-      </li>
-    
-  </ul>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>mongod --port 27017
+<span class="nv">$ </span>mongo --port 27017
+&gt; use admin
+&gt; db.addUser<span class="o">(</span> <span class="o">{</span> user: <span class="s2">&quot;&lt;username&gt;&quot;</span>,
+          <span class="nb">pwd</span>: <span class="s2">&quot;&lt;password&gt;&quot;</span>,
+          roles: <span class="o">[</span> <span class="o">{</span> role: <span class="s2">&quot;userAdminAnyDatabase&quot;</span>, db: <span class="s2">&quot;admin&quot;</span> <span class="o">}</span> <span class="o">]</span> <span class="o">}</span> <span class="o">)</span></code></pre></div>
 
-  <p class="page-link">Older posts can be found at the <a href="/archive">archive</a></p>
-  <p class="rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a></p>
+<p>Since MongoDB 3.0 and onwards use <em>db.createUser</em> as <em>db.addUser</em> was removed. </p>
+
+<p>Re-start the mongod instance with the ‐‐<em>auth</em> command line option or, if using a configuration file, the <em>security.authorization</em> setting.</p>
+
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>mongod --auth --port <span class="m">27017</span> --dbpath /data/db1
+<span class="nv">$ </span>mongo --port <span class="m">27017</span> -u <span class="s2">&quot;&lt;username&gt;&quot;</span> -p <span class="s2">&quot;&lt;password&gt;&quot;</span> --authenticationDatabase <span class="s2">&quot;admin&quot;</span>
+&gt;</code></pre></div>
+
+<p>You can also authenticate the user after establishing the connection. In the following case, there is a user named <em>testuser</em> with the <em>readWrite</em> role in the <em>test</em> database.</p>
+
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>mongod --auth --port <span class="m">27017</span> --dbpath /data/db1
+<span class="nv">$ </span>mongo --port 27017
+&gt; use <span class="nb">test</span>
+&gt; db.auth<span class="o">(</span><span class="s2">&quot;&lt;testuser&gt;&quot;</span>, <span class="s2">&quot;&lt;testpwd&gt;&quot;</span> <span class="o">)</span>
+&gt;</code></pre></div>
+
+<p>From <a href="https://docs.mongodb.com/manual/tutorial/enable-authentication/">MongoDB documentation</a></p>
+
+<p>Remember to create separate login credentials for each application that will be accessing the database. Moreover, each developer, administrators and DBA should have unique credentials, not just a single shared <em>root</em> access.</p>
+
+
+  </article>
 
 </div>
 
