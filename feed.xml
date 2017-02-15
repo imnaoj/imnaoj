@@ -5,9 +5,33 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>https://imnaoj.github.io/</link>
     <atom:link href="https://imnaoj.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 31 Jan 2017 21:18:23 +0100</pubDate>
-    <lastBuildDate>Tue, 31 Jan 2017 21:18:23 +0100</lastBuildDate>
+    <pubDate>Wed, 15 Feb 2017 20:05:03 +0100</pubDate>
+    <lastBuildDate>Wed, 15 Feb 2017 20:05:03 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Human hacking and Sneaky Pete</title>
+        <description> Sneaky Pete is an Amazon Original series. It follows a released convict who adopts the identity of his cell mate in order to avoid his past life. The IMDB score for the series is 8.5, but I encourage you to review the scores for each episode - each new episode gets a higher score, with the final one getting an impressive 9.5! Try Amazon Prime for free during 30 days and enjoy it!
+
+</description>
+        <pubDate>Wed, 15 Feb 2017 21:04:07 +0100</pubDate>
+        <link>https://imnaoj.github.io/2017/02/15/human-hacking.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/02/15/human-hacking.html</guid>
+        
+        <category>human</category>
+        
+        <category>hacking</category>
+        
+        <category>sneaky</category>
+        
+        <category>pete</category>
+        
+        <category>social</category>
+        
+        <category>engineering</category>
+        
+        
+      </item>
     
       <item>
         <title>MongoDB best security practices</title>

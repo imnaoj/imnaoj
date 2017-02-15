@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MongoDB best security practices</title>
+    <title>Human hacking and Sneaky Pete</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!">
-    <link rel="canonical" href="https://imnaoj.github.io/2017/01/31/mongodb-best-security-practices.html">
+    <link rel="canonical" href="https://imnaoj.github.io/2017/02/15/human-hacking.html">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -61,43 +61,22 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>MongoDB best security practices</h1>
-    <p class="meta">Jan 31, 2017</p>
+    <h1>Human hacking and Sneaky Pete</h1>
+    <p class="meta">Feb 15, 2017</p>
   </header>
 
   <article class="post-content">
-  <p>Today I have read about the detention of people related to the Phineas Fisher’s hacks. In such news article I found a link to his latest manifesto at <a href="http://pastebin.com/raw/GPSHF04A" target="_blank">pastebin</a>.</p>
+  <p><img src="https://images-na.ssl-images-amazon.com/images/I/91ULoUrt2aL._UR267,200_FMJPG_.jpg" alt="" style="float:right; margin-left:10px;" /> Sneaky Pete is an Amazon Original series. It follows a released convict who adopts the identity of his cell mate in order to avoid his past life. The IMDB score for the series is 8.5, but I encourage you to review the <a href="http://www.imdb.com/title/tt5011816/eprate" target="_blank">scores for each episode</a> - each new episode gets a higher score, with the final one getting an impressive 9.5! Try <a href="http://www.amazon.es/pruebapremiumgratis?tag=imnaoj-21" target="_blank">Amazon Prime</a> for free during 30 days and enjoy it!</p>
 
-<p>Such manifesto (in Spanish) explains how he (Phineas Fisher) hacked the <em>Hacking Team</em> company. One thing I really found interesting is that Hacking Team were running MongoDB instances out-of-the-box at the time they were hacked. For those unfamiliar with MongoDB, it comes with no authentication enabled, so if you do not configure it, anybody in the same network may connect to the database and run any query without need to provide username nor password.</p>
+<p>For a long time I had a book in the pending list, <a href="http://amzn.to/2lOohZS" target="_blank">Social Engineering: <em>The Art of Human Hacking</em></a> … I just have started reading it and I truly believe it will exceed my expectations, just as the Sneaky Pete show did.</p>
 
-<p>The steps to enable MongoDB authentication are pretty straight-forward: start the server, open a console and add an admin user.</p>
+<p><img src="https://images-eu.ssl-images-amazon.com/images/I/41e8wcXVEIL._UY250_.jpg" alt="" style="float:left; margin-right:10px;" /> <em>The first book to reveal and dissect the technical aspect of many social engineering maneuvers. From elicitation, pretexting, influence and manipulation all aspects of social engineering are picked apart, discussed and explained by using real world examples, personal experience and the science behind them to unraveled the mystery in social engineering.</em></p>
 
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>mongod --port 27017
-<span class="nv">$ </span>mongo --port 27017
-&gt; use admin
-&gt; db.addUser<span class="o">(</span> <span class="o">{</span> user: <span class="s2">&quot;&lt;username&gt;&quot;</span>,
-          <span class="nb">pwd</span>: <span class="s2">&quot;&lt;password&gt;&quot;</span>,
-          roles: <span class="o">[</span> <span class="o">{</span> role: <span class="s2">&quot;userAdminAnyDatabase&quot;</span>, db: <span class="s2">&quot;admin&quot;</span> <span class="o">}</span> <span class="o">]</span> <span class="o">}</span> <span class="o">)</span></code></pre></div>
+<p><em>Kevin Mitnick — one of the most famous social engineers in the world — popularized the term “social engineering.” He explained that it is much easier to trick someone into revealing a password for a system than to exert the effort of hacking into the system. Mitnick claims that this social engineering tactic was the single-most effective method in his arsenal.</em></p>
 
-<p>Since MongoDB 3.0 and onwards use <em>db.createUser</em> as <em>db.addUser</em> was removed. </p>
+<p>Certainly, the Amazon series’ star character could have read this book, among others.</p>
 
-<p>Re-start the mongod instance with the ‐‐<em>auth</em> command line option or, if using a configuration file, the <em>security.authorization</em> setting.</p>
-
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>mongod --auth --port <span class="m">27017</span> --dbpath /data/db1
-<span class="nv">$ </span>mongo --port <span class="m">27017</span> -u <span class="s2">&quot;&lt;username&gt;&quot;</span> -p <span class="s2">&quot;&lt;password&gt;&quot;</span> --authenticationDatabase <span class="s2">&quot;admin&quot;</span>
-&gt;</code></pre></div>
-
-<p>You can also authenticate the user after establishing the connection. In the following case, there is a user named <em>testuser</em> with the <em>readWrite</em> role in the <em>test</em> database.</p>
-
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>mongod --auth --port <span class="m">27017</span> --dbpath /data/db1
-<span class="nv">$ </span>mongo --port 27017
-&gt; use <span class="nb">test</span>
-&gt; db.auth<span class="o">(</span><span class="s2">&quot;&lt;testuser&gt;&quot;</span>, <span class="s2">&quot;&lt;testpwd&gt;&quot;</span> <span class="o">)</span>
-&gt;</code></pre></div>
-
-<p>From <a href="https://docs.mongodb.com/manual/tutorial/enable-authentication/" target="_blank">MongoDB documentation</a></p>
-
-<p>Remember to create separate login credentials for each application that will be accessing the database. Moreover, each developer, administrators and DBA should have unique credentials, not just a single shared <em>root</em> access.</p>
+<p><a href="http://amzn.to/2lOohZS" target="_blank">Buy it at Amazon</a></p>
 
 
   </article>
