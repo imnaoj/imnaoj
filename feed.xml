@@ -5,9 +5,35 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>https://imnaoj.github.io/</link>
     <atom:link href="https://imnaoj.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 15 Feb 2017 20:05:03 +0100</pubDate>
-    <lastBuildDate>Wed, 15 Feb 2017 20:05:03 +0100</lastBuildDate>
+    <pubDate>Mon, 20 Feb 2017 21:43:16 +0100</pubDate>
+    <lastBuildDate>Mon, 20 Feb 2017 21:43:16 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>SANS&#39; cheat sheets and posters</title>
+        <description> SANS has recently released some interesting wallpapers focused on Python, Powershell and Bash. Then I discovered the so useful pocket guides, also called cheat sheets, in a handy PDF format…
+
+</description>
+        <pubDate>Mon, 20 Feb 2017 22:44:07 +0100</pubDate>
+        <link>https://imnaoj.github.io/2017/02/20/sans-cheat-sheet-poster.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/02/20/sans-cheat-sheet-poster.html</guid>
+        
+        <category>snas</category>
+        
+        <category>cheat</category>
+        
+        <category>sheet</category>
+        
+        <category>python</category>
+        
+        <category>bash</category>
+        
+        <category>powershell</category>
+        
+        <category>metasploit</category>
+        
+        
+      </item>
     
       <item>
         <title>Human hacking and Sneaky Pete</title>
