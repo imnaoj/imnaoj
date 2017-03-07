@@ -5,9 +5,29 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>https://imnaoj.github.io/</link>
     <atom:link href="https://imnaoj.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Feb 2017 21:43:16 +0100</pubDate>
-    <lastBuildDate>Mon, 20 Feb 2017 21:43:16 +0100</lastBuildDate>
+    <pubDate>Tue, 07 Mar 2017 08:52:16 +0100</pubDate>
+    <lastBuildDate>Tue, 07 Mar 2017 08:52:16 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Bypass Windows 7 authentication using Kon-Boot</title>
+        <description>WARNING: Using any software to hack/deface any property other than yours may be illegal. Don’t be evil. 
+
+</description>
+        <pubDate>Fri, 03 Mar 2017 21:02:19 +0100</pubDate>
+        <link>https://imnaoj.github.io/2017/03/03/bypass-windows-7-authentication-using-kon-boot.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/03/03/bypass-windows-7-authentication-using-kon-boot.html</guid>
+        
+        <category>bypass</category>
+        
+        <category>forgotten</category>
+        
+        <category>password</category>
+        
+        <category>windows</category>
+        
+        
+      </item>
     
       <item>
         <title>SANS&#39; cheat sheets and posters</title>
@@ -18,7 +38,7 @@
         <link>https://imnaoj.github.io/2017/02/20/sans-cheat-sheet-poster.html</link>
         <guid isPermaLink="true">https://imnaoj.github.io/2017/02/20/sans-cheat-sheet-poster.html</guid>
         
-        <category>snas</category>
+        <category>sans</category>
         
         <category>cheat</category>
         
