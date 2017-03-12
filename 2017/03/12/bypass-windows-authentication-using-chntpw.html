@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bypass Windows 7 authentication using Kon-Boot</title>
+    <title>Bypass Windows authentication using chntpw</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!">
-    <link rel="canonical" href="https://imnaoj.github.io/2017/03/03/bypass-windows-7-authentication-using-kon-boot.html">
+    <link rel="canonical" href="https://imnaoj.github.io/2017/03/12/bypass-windows-authentication-using-chntpw.html">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -61,18 +61,18 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>Bypass Windows 7 authentication using Kon-Boot</h1>
-    <p class="meta">Mar 3, 2017</p>
+    <h1>Bypass Windows authentication using chntpw</h1>
+    <p class="meta">Mar 12, 2017</p>
   </header>
 
   <article class="post-content">
-  <p>Have you ever forgotten a Windows password?</p>
+  <p>Another way to gain access to your Windows system when you have forgotten your password is to use the chntpw utility, also known as the <em>Offline NT Password &amp; Registry Editor</em>.</p>
 
 <p><strong>WARNING</strong>: Using any software to hack/deface any property other than yours may be illegal. Don’t be evil. </p>
 
-<p>Sure you haven’t, but somebody you knows may have! Kon-Boot comes to rescue. In the following screencast it is shown how to use the <a href="http://www.piotrbania.com/all/kon-boot/" target="_blank">Kon-Boot</a> CD to bypass Windows 7 password authentication. </p>
+<p>Last post video showed <a href="/2017/03/03/bypass-windows-7-authentication-using-kon-boot.html">how to use Kon-Boot to bypass Windows user authentication</a>. Kon-Boot is not just the only option you have. The <a href="https://pogostick.net/~pnh/ntpasswd/" target="_blank">chntpw utility</a> allows you to disable the password requirement for a given user. It also provides other interesting features: to enable any disabled account and also to enable the password requirement fo any user! This last feature was discovered after reading a <a href="http://www.forensicfocus.com/Forums/viewtopic/t=5539/postdays=0/postorder=asc/start=0/" target="_blank">thread</a> in an interesting forensic forum.</p>
 
-<p><a href="http://www.youtube.com/watch?v=U7AnATgwvjU" target="_blank"><img src="/img/ytb_w7kb.jpg" alt="Bypass Windows 7 authentication using Kon-Boot" /></a></p>
+<p><a href="http://www.youtube.com/watch?v=gXcq8DgzO5E" target="_blank"><img src="/img/ytb_chntpw.jpg" alt="Bypass Windows 7 authentication using chntpw" /></a></p>
 
 <p>You may get Windows images for testing purposes <a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/" target="_blank">here</a>. Be sure to review the <a href="http://modernievirt.blob.core.windows.net/vhd/release_notes_license_terms_1_5_15.pdf" target="_blank">license terms</a> provided by Microsoft.</p>
 

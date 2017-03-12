@@ -5,13 +5,33 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>https://imnaoj.github.io/</link>
     <atom:link href="https://imnaoj.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 07 Mar 2017 08:52:16 +0100</pubDate>
-    <lastBuildDate>Tue, 07 Mar 2017 08:52:16 +0100</lastBuildDate>
+    <pubDate>Sun, 12 Mar 2017 19:09:12 +0100</pubDate>
+    <lastBuildDate>Sun, 12 Mar 2017 19:09:12 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
+        <title>Bypass Windows authentication using chntpw</title>
+        <description>Another way to gain access to your Windows system when you have forgotten your password is to use the chntpw utility, also known as the Offline NT Password &amp;amp; Registry Editor.
+
+</description>
+        <pubDate>Sun, 12 Mar 2017 21:02:19 +0100</pubDate>
+        <link>https://imnaoj.github.io/2017/03/12/bypass-windows-authentication-using-chntpw.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/03/12/bypass-windows-authentication-using-chntpw.html</guid>
+        
+        <category>bypass</category>
+        
+        <category>forgotten</category>
+        
+        <category>password</category>
+        
+        <category>windows</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Bypass Windows 7 authentication using Kon-Boot</title>
-        <description>WARNING: Using any software to hack/deface any property other than yours may be illegal. Don’t be evil. 
+        <description>Have you ever forgotten a Windows password?
 
 </description>
         <pubDate>Fri, 03 Mar 2017 21:02:19 +0100</pubDate>
