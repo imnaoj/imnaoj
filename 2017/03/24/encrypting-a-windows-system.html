@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>mind the gap</title>
+    <title>Encrypting a Windows system</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!">
-    <link rel="canonical" href="https://imnaoj.github.io/">
+    <link rel="canonical" href="https://imnaoj.github.io/2017/03/24/encrypting-a-windows-system.html">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -58,40 +58,26 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Posts</h1>
+  <header class="post-header">
+    <h1>Encrypting a Windows system</h1>
+    <p class="meta">Mar 24, 2017</p>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">Mar 24, 2017</span>
-        <a class="post-link" href="/2017/03/24/encrypting-a-windows-system.html">Encrypting a Windows system</a>
-        <span class="post-excerpt">The last two posts showed how to use Kon-Boot and the chntpw utility to gain access to a Windows system, just bypassing the authentication step - no password was needed. Both utilities require to boot from CD or USB, so the BIOS menu should be protected. However, someone could unplug the disk from that BIOS protected system and then plug it into another identical unprotected BIOS computer. So BIOS password is a good option, but it can be evaded.
+  <article class="post-content">
+  <p>The last two posts showed how to use <a href="/2017/03/03/bypass-windows-7-authentication-using-kon-boot.html">Kon-Boot</a> and the <a href="/2017/03/12/bypass-windows-authentication-using-chntpw.html">chntpw</a> utility to gain access to a Windows system, just bypassing the authentication step - no password was needed. Both utilities require to boot from CD or USB, so the BIOS menu should be protected. However, someone could unplug the disk from that BIOS protected system and then plug it into another identical unprotected BIOS computer. So BIOS password is a good option, but it can be evaded.</p>
 
-</span>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 12, 2017</span>
-        <a class="post-link" href="/2017/03/12/bypass-windows-authentication-using-chntpw.html">Bypass Windows authentication using chntpw</a>
-        <span class="post-excerpt">Another way to gain access to your Windows system when you have forgotten your password is to use the chntpw utility, also known as the Offline NT Password &amp; Registry Editor.
+<p><strong>WARNING</strong>: To hack/deface any property other than yours may be illegal. Don’t be evil.</p>
 
-</span>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 3, 2017</span>
-        <a class="post-link" href="/2017/03/03/bypass-windows-7-authentication-using-kon-boot.html">Bypass Windows 7 authentication using Kon-Boot</a>
-        <span class="post-excerpt">Have you ever forgotten a Windows password?
+<p>Best way to prevent unauthorized access to a Windows system is to encrypt the disk. Here, the <a href="https://veracrypt.codeplex.com/" target="_blank">VeraCrypt</a> software is a very good option. As shown in the below video, the chntpw utility is useless once the Windows system partition is encrypted.</p>
 
-</span>
-      </li>
-    
-  </ul>
+<p><a href="http://www.youtube.com/watch?v=8VmkAqAz_Rc" target="_blank"><img src="/img/ytb_veracrypt.jpg" alt="Encrypting the Windows system pastition with VeraCrypt" /></a></p>
 
-  <p class="page-link">Older posts can be found at the <a href="/archive">archive</a></p>
-  <p class="rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a></p>
+<p>You may get Windows images for testing purposes <a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/" target="_blank">here</a>. Be sure to review the <a href="http://modernievirt.blob.core.windows.net/vhd/release_notes_license_terms_1_5_15.pdf" target="_blank">license terms</a> provided by Microsoft.</p>
+
+
+  </article>
 
 </div>
 
