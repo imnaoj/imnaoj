@@ -5,9 +5,33 @@
     <description>This blog is a collection of tips and tricks found elsewhere, so its posts are about things perhaps I would need someday. Maybe you find something useful here too!</description>
     <link>https://imnaoj.github.io/</link>
     <atom:link href="https://imnaoj.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 24 Mar 2017 21:01:02 +0100</pubDate>
-    <lastBuildDate>Fri, 24 Mar 2017 21:01:02 +0100</lastBuildDate>
+    <pubDate>Wed, 05 Apr 2017 19:14:47 +0200</pubDate>
+    <lastBuildDate>Wed, 05 Apr 2017 19:14:47 +0200</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Removing PDF owner&#39;s password</title>
+        <description>Today someone asked me to remove the text copy protection of a given PDF file: such protection is password enabled. She is the original content author, but the PDF file was crafted by a third person who is no longer around. So it’s time to find a workaround to recover the control of that file. First option could be to try to brute force the PDF owner’s password with some utility, like pdfcrack.
+
+</description>
+        <pubDate>Wed, 05 Apr 2017 21:15:19 +0200</pubDate>
+        <link>https://imnaoj.github.io/2017/04/05/removing-pdf-owner-s-password.html</link>
+        <guid isPermaLink="true">https://imnaoj.github.io/2017/04/05/removing-pdf-owner-s-password.html</guid>
+        
+        <category>pdf</category>
+        
+        <category>bypass</category>
+        
+        <category>owner</category>
+        
+        <category>password</category>
+        
+        <category>print</category>
+        
+        <category>copy</category>
+        
+        
+      </item>
     
       <item>
         <title>Encrypting a Windows system</title>
@@ -199,26 +223,6 @@
         <category>management</category>
         
         <category>personal</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Mounting drive images</title>
-        <description>Recently I read about how to Mount a Raspberry Pi File System Image. The described procedure there can be applied to any drive image as long as it is not a virtual drive image (a dd image from a SD card is used there). Luckily, many time ago I found the instructions for virtual drive images.
-
-</description>
-        <pubDate>Fri, 13 Jan 2017 21:18:18 +0100</pubDate>
-        <link>https://imnaoj.github.io/2017/01/13/mounting-drives-images.html</link>
-        <guid isPermaLink="true">https://imnaoj.github.io/2017/01/13/mounting-drives-images.html</guid>
-        
-        <category>mount</category>
-        
-        <category>image</category>
-        
-        <category>drive</category>
-        
-        <category>filesystem</category>
         
         
       </item>
